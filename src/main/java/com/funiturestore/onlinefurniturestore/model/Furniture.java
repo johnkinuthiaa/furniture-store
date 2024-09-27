@@ -11,6 +11,7 @@ public class Furniture {
     private String furnitureDescription;
     private Float itemRating;
     private String itemsCondition;
+    private String furnitureCategory;
     private Double price;
 
     public Furniture(){}
@@ -19,12 +20,14 @@ public class Furniture {
                      String furnitureDescription,
                      Float itemRating,
                      String itemsCondition,
+                     String furnitureCategory,
                      Double price){
         this.id=id;
         this.furnitureName=furnitureName;
         this.furnitureDescription=furnitureDescription;
         this.itemRating=itemRating;
         this.itemsCondition =itemsCondition;
+        this.furnitureCategory=furnitureCategory;
         this.price=price;
     }
     public void setId(Long id){
@@ -56,6 +59,12 @@ public class Furniture {
     }
     public String getItemsCondition(){
         return itemsCondition;
+    }
+    public void setFurnitureCategory(String furnitureCategory){
+        this.furnitureCategory=furnitureCategory;
+    }
+    public String getFurnitureCategory(){
+        return furnitureCategory;
     }
     public void setPrice(Double price){
         this.price=price;
