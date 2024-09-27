@@ -1,4 +1,7 @@
 package com.funiturestore.onlinefurniturestore.repository;
 
-public interface FurnitureRepository {
+import com.funiturestore.onlinefurniturestore.model.Furniture;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface FurnitureRepository extends JpaRepository<Furniture,Long> {
 }
