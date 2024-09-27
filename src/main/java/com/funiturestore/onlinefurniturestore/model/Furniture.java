@@ -8,6 +8,7 @@ public class Furniture {
     @Id
     private Long id;
     private String furnitureName;
+    private String imageUrl;
     private String furnitureDescription;
     private Float itemRating;
     private String itemsCondition;
@@ -17,6 +18,7 @@ public class Furniture {
     public Furniture(){}
     public Furniture(Long id,
                      String furnitureName,
+                     String imageUrl,
                      String furnitureDescription,
                      Float itemRating,
                      String itemsCondition,
@@ -24,6 +26,7 @@ public class Furniture {
                      Double price){
         this.id=id;
         this.furnitureName=furnitureName;
+        this.imageUrl=imageUrl;
         this.furnitureDescription=furnitureDescription;
         this.itemRating=itemRating;
         this.itemsCondition =itemsCondition;
@@ -41,6 +44,12 @@ public class Furniture {
     }
     public String getFurnitureName(){
         return furnitureName;
+    }
+    public void setImageUrl(String imageUrl){
+        this.imageUrl=imageUrl;
+    }
+    public String getImageUrl(){
+        return imageUrl;
     }
     public void setFurnitureDescription(String furnitureDescription){
         this.furnitureDescription=furnitureDescription;

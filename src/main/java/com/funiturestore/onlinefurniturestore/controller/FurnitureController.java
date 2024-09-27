@@ -17,6 +17,7 @@ public class FurnitureController {
     public List<Furniture> getAllFurniture(){
         return service.getAllFurniture();
     }
+
     @PostMapping("/add-furniture")
     public Furniture createNewFurniture(@RequestBody Furniture furniture,@RequestParam Long id){
         return service.createNewFurniture(furniture,id);
