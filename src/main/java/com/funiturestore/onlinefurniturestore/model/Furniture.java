@@ -3,28 +3,29 @@ package com.funiturestore.onlinefurniturestore.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-import java.time.LocalDate;
-
 @Entity
 public class Furniture {
     @Id
     private Long id;
-    private String name;
-    private String description;
-    private Float rating;
-    private String condition;
+    private String furnitureName;
+    private String furnitureDescription;
+    private Float itemRating;
+    private String itemsCondition;
     private Double price;
-    private LocalDate createdOn;
 
     public Furniture(){}
-    public Furniture(Long id,String name,String description,Float rating,String condition,Double price,LocalDate createdOn){
+    public Furniture(Long id,
+                     String furnitureName,
+                     String furnitureDescription,
+                     Float itemRating,
+                     String itemsCondition,
+                     Double price){
         this.id=id;
-        this.name=name;
-        this.description=description;
-        this.rating=rating;
-        this.condition=condition;
+        this.furnitureName=furnitureName;
+        this.furnitureDescription=furnitureDescription;
+        this.itemRating=itemRating;
+        this.itemsCondition =itemsCondition;
         this.price=price;
-        this.createdOn=createdOn;
     }
     public void setId(Long id){
         this.id=id;
@@ -32,29 +33,29 @@ public class Furniture {
     public Long getId(){
         return id;
     }
-    public void setName(String name){
-        this.name=name;
+    public void setFurnitureName(String furnitureName){
+        this.furnitureName=furnitureName;
     }
-    public String getName(){
-        return name;
+    public String getFurnitureName(){
+        return furnitureName;
     }
-    public void setDescription(String description){
-        this.description=description;
+    public void setFurnitureDescription(String furnitureDescription){
+        this.furnitureDescription=furnitureDescription;
     }
-    public String getDescription(){
-        return description;
+    public String getFurnitureDescription(){
+        return furnitureDescription;
     }
-    public void setRating(Float rating){
-        this.rating=rating;
+    public void setItemRating(Float itemRating){
+        this.itemRating=itemRating;
     }
-    public Float getRating(){
-        return rating;
+    public Float getItemRating(){
+        return itemRating;
     }
-    public void setCondition(String condition){
-        this.condition=condition;
+    public void setItemsCondition(String itemsCondition){
+        this.itemsCondition = itemsCondition;
     }
-    public String getCondition(){
-        return condition;
+    public String getItemsCondition(){
+        return itemsCondition;
     }
     public void setPrice(Double price){
         this.price=price;
@@ -62,10 +63,10 @@ public class Furniture {
     public Double getPrice(){
         return price;
     }
-    public void setCreatedOn(LocalDate createdOn){
-        this.createdOn=createdOn;
-    }
-    public LocalDate getCreatedOn(){
-        return createdOn;
-    }
+//    public void setCreatedOn(LocalDate createdOn){
+//        this.createdOn=createdOn;
+//    }
+//    public LocalDate getCreatedOn(){
+//        return createdOn;
+//    }
 }

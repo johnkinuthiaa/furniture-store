@@ -22,7 +22,7 @@ public class FurnitureController {
         return service.createNewFurniture(furniture,id);
     }
     @PutMapping("/update-existing-furniture")
-    public Furniture updateExistingFurniture( Furniture furniture,Long id){
+    public Furniture updateExistingFurniture(@RequestBody Furniture furniture,@RequestParam Long id){
         return service.updateExistingFurniture(furniture,id);
     }
     @DeleteMapping("/Delete-by-id")
