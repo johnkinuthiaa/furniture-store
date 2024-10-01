@@ -5,6 +5,7 @@ import com.funiturestore.onlinefurniturestore.repository.FurnitureRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class FurnitureService implements FurnitureServiceInterface{
@@ -50,6 +51,30 @@ public class FurnitureService implements FurnitureServiceInterface{
         }else {
             repository.deleteAll();
         }
+    }
+    @Override
+    public List<Furniture> getFurnitureByName(String name){
+        return repository.findAll().stream()
+                .filter(furniture ->furniture.getFurnitureName().toLowerCase().contains(name.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+    @Override
+    public List<Furniture> getFurnitureByCondition(String condition){
+        return repository.findAll().stream()
+                .filter(furniture ->furniture.getItemsCondition().toLowerCase().contains(condition.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+    @Override
+    public List<Furniture> getFurnitureByRating(Float rating){
+        return repository.findAll().stream()
+                .filter(furniture -> furniture.getItemRating().equals(rating))
+                .collect(Collectors.toList());
+    }
+    @Override
+    public List<Furniture> getFurnitureByPrice(Double price){
+        return repository.findAll().stream()
+                .filter(furniture -> furniture.getPrice().equals(price))
+                .collect(Collectors.toList());
     }
 
 }
